@@ -7,14 +7,6 @@ same design system and navigation shell so the two study guides feel like one co
 
 ---
 
-## Status
-
-This repo currently ships the **framework** plus one fully-written module (`ML Fundamentals`) that
-doubles as a live template. New modules get added one at a time — see
-[Adding a New Module](#adding-a-new-module) below.
-
----
-
 ## What It Does
 
 - **Hierarchical navigation** — categories in the sidebar collapse/expand; tabs within each module
@@ -37,22 +29,6 @@ More rows land here as modules are written — keep this table and `src/data/nav
 
 ---
 
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| UI Framework | React 18 |
-| Routing | React Router v6 |
-| Bundler | Vite 5 |
-| Styling | Vanilla CSS (custom design tokens) |
-| Icons | Tabler Icons (CDN) |
-| Fonts | Inter (sans), JetBrains Mono (code) |
-
-No external UI library. No Tailwind. Pure CSS design system with custom tokens for both light and
-dark modes — the same tokens as the Deep Learning platform, so both sites feel consistent.
-
----
-
 ## Project Layout
 
 ```
@@ -71,24 +47,23 @@ Learn-ML/
     ├── styles/
     │   ├── global.css          # Design tokens (colors, fonts, radii)
     │   ├── layout.css          # Sidebar, TopBar, content-shell layout
-    │   └── components.css      # Reusable component styles (tables, code blocks,
-    │                           # QA, notes, badges, viz-box…)
+    │   └── components.css      # Reusable component styles (tables, code blocks,QA, notes, badges, viz-box…)
     │
     ├── components/
     │   ├── layout/
-    │   │   ├── Sidebar.jsx     # Collapsible nav with category accordion
-    │   │   ├── SectionNav.jsx  # Horizontal tab bar for sub-topic switching
-    │   │   └── NavButtons.jsx  # Prev/Next module footer navigation
+    │   │   ├── Sidebar.jsx
+    │   │   ├── SectionNav.jsx
+    │   │   └── NavButtons.jsx
     │   └── ui/
-    │       ├── Code.jsx        # Syntax-highlighted code block + copy button
-    │       ├── QA.jsx          # Collapsible Q&A accordion item
+    │       ├── Code.jsx
+    │       ├── QA.jsx
     │       ├── Typography.jsx  # Mx (math), H2, H3, P typography helpers
     │       ├── Primitives.jsx  # Note, Table, Grid, Card, VizBox, SliderRow, Badge
-    │       └── JupyterCell.jsx # Jupyter-style input/output cell, for practical modules
+    │       └── JupyterCell.jsx
     │
     └── pages/                  # One file per module, lazy-loaded via App.jsx
         ├── _Placeholder.jsx    # "Coming soon" stub for a registered-but-unwritten module
-        └── MLFundamentals.jsx  # Module 01 — also the reference template for new modules
+        └── MLFundamentals.jsx
 ```
 
 ---
@@ -105,8 +80,8 @@ npm run dev
 Build for production:
 
 ```bash
-npm run build   # outputs to dist/
-npm run preview # serve the production build locally
+npm run build
+npm run preview
 ```
 
 ---
@@ -146,12 +121,32 @@ automatically since they read from `nav.js`.
 
 ---
 
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| UI Framework | React 18 |
+| Routing | React Router v6 |
+| Bundler | Vite 5 |
+| Styling | Vanilla CSS (custom design tokens) |
+| Icons | Tabler Icons (CDN) |
+| Fonts | Inter (sans), JetBrains Mono (code) |
+
+No external UI library. No Tailwind. Pure CSS design system with custom tokens for both light and
+dark modes — the same tokens as the Deep Learning platform, so both sites feel consistent.
+
+---
+
 ## Deployment
 
 Pushes to `main` build via Vite and publish `dist/` to GitHub Pages through
-`.github/workflows/deploy.yml` (same pattern as the Deep Learning platform). The `vite.config.js`
-`base` and `src/main.jsx` `basePath` assume the repo is served at `/Learn-ML/` — update both (and
-`index.html`'s OG/Twitter URLs) if it ends up hosted under a different path.
+`.github/workflows/deploy.yml` (same pattern as the Deep Learning platform). `vite.config.js`'s
+`base` defaults to `/Learn-ML/` but reads a `DEPLOY_BASE` env var first, and `src/main.jsx` derives
+its router `basePath` from Vite's `import.meta.env.BASE_URL` — so building with
+`DEPLOY_BASE=/some-other-path/ npm run build` retargets both without editing code. This is what
+lets the same repo be built once for `jitamb.github.io/Learn-ML/` and again for inclusion under
+[study.jitam.in](https://study.jitam.in). Update `index.html`'s OG/Twitter URLs by hand if the
+canonical deployment path changes.
 
 ---
 
@@ -161,7 +156,8 @@ Pushes to `main` build via Vite and publish `dist/` to GitHub Pages through
 
 ## Credits & Sources
 
-- **Jitam Barman** — curation, content, and platform design
-- **Aurélien Géron**, *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* (O'Reilly Media) — primary reference for module content
-- **Claude** (Anthropic) — AI pair-programmer for this platform
-- **IIT Kharagpur**
+- **_Jitam Barman_** — curation, content, and platform design
+- **_Aurélien Géron_**, *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow* (O'Reilly Media) — primary reference for module content
+- **_CampusX_** - 100 Days of Machine Learning Playlist
+- **_Claude_** (Anthropic) — AI pair-programmer for this platform
+- **_IIT Kharagpur_**
