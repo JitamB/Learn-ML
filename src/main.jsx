@@ -7,7 +7,7 @@ import './styles/layout.css'
 import './styles/components.css'
 import { HelmetProvider } from 'react-helmet-async'
 
-const basePath = '/Learn-ML'
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
 const searchParams = new URLSearchParams(window.location.search)
 const redirectedPath = searchParams.get('p')
 
