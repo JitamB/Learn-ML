@@ -1,0 +1,182 @@
+/* ═══════════════════════════════════════════════════════════
+   ML STUDY PLATFORM — GLOBAL DESIGN TOKENS & RESET
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Font variables ───────────────────────────────────────── */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* ── Border-radius ─────────────────────────────────────────── */
+:root {
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 10px;
+  --border-radius-xl: 14px;
+}
+
+/* ── Light mode colour tokens ──────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --color-background-primary:    #FAFAF9;
+  --color-background-secondary:  #F2F1EF;
+  --color-background-tertiary:   #E8E7E4;
+
+  --color-background-info:       #E6F1FB;
+  --color-background-success:    #EAF3DE;
+  --color-background-warning:    #FAEEDA;
+  --color-background-danger:     #FAECE7;
+  --color-background-purple:     #EEEDFE;
+
+  /* Text */
+  --color-text-primary:          #1C1B19;
+  --color-text-secondary:        #4A4945;
+  --color-text-tertiary:         #888780;
+
+  --color-text-info:             #0C447C;
+  --color-text-success:          #27500A;
+  --color-text-warning:          #633806;
+  --color-text-danger:           #712B13;
+  --color-text-purple:           #3C3489;
+
+  /* Borders */
+  --color-border-primary:        #D6D4CF;
+  --color-border-secondary:      #C4C2BC;
+  --color-border-tertiary:       #E0DED9;
+
+  --color-border-info:           #185FA5;
+  --color-border-success:        #3B6D11;
+  --color-border-warning:        #854F0B;
+  --color-border-danger:         #993C1D;
+  --color-border-purple:         #534AB7;
+
+  /* Sidebar & topbar */
+  --sidebar-bg:                  #FFFFFF;
+  --sidebar-border:              #E8E7E4;
+  --topbar-bg:                   #FFFFFF;
+  --topbar-border:               #E8E7E4;
+
+  /* Accent (active nav item highlight) */
+  --accent:                      #0a1623;
+  --accent-subtle:               #e6f1fb8c;
+
+  /* Code block */
+  --code-bg:                     #1B1F2E;
+  --code-border:                 #2D3347;
+  --code-header-bg:              #141720;
+  --code-gutter:                 #2A2F44;
+  --code-text:                   #D4D4D4;
+
+  /* Shadow */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ── Dark mode ─────────────────────────────────────────────── */
+:root[data-theme="dark"] {
+    --color-background-primary:    #1A1918;
+    --color-background-secondary:  #232220;
+    --color-background-tertiary:   #2C2B29;
+
+    --color-background-info:       #0D2540;
+    --color-background-success:    #112408;
+    --color-background-warning:    #261802;
+    --color-background-danger:     #2B0E06;
+    --color-background-purple:     #16134A;
+
+    --color-text-primary:          #E8E6E1;
+    --color-text-secondary:        #B0ADA5;
+    --color-text-tertiary:         #6B6964;
+
+    --color-text-info:             #75B0E8;
+    --color-text-success:          #8CC85E;
+    --color-text-warning:          #E8A84A;
+    --color-text-danger:           #E8896B;
+    --color-text-purple:           #A49BEF;
+
+    --color-border-primary:        #333230;
+    --color-border-secondary:      #3D3C39;
+    --color-border-tertiary:       #2C2B29;
+
+    --color-border-info:           #185FA5;
+    --color-border-success:        #3B6D11;
+    --color-border-warning:        #854F0B;
+    --color-border-danger:         #993C1D;
+    --color-border-purple:         #534AB7;
+
+    --sidebar-bg:                  #141312;
+    --sidebar-border:              #2A2927;
+    --topbar-bg:                   #141312;
+    --topbar-border:               #2A2927;
+
+    --code-bg:                     #0D0F18;
+    --code-border:                 #1E2233;
+    --code-header-bg:              #0A0C14;
+    --code-gutter:                 #181B27;
+
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md:  0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+/* ── Base reset ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-sans); }
+code, pre { font-family: var(--font-mono); }
+
+/* ── Range input styling ───────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-border-tertiary);
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--color-background-primary);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* ── Scrollbar (webkit) ────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-secondary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* ── Table reset ───────────────────────────────────────────── */
+table { border-collapse: collapse; }
