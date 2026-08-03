@@ -139,14 +139,19 @@ dark modes — the same tokens as the Deep Learning platform, so both sites feel
 
 ## Deployment
 
-Pushes to `main` build via Vite and publish `dist/` to GitHub Pages through
-`.github/workflows/deploy.yml` (same pattern as the Deep Learning platform). `vite.config.js`'s
-`base` defaults to `/Learn-ML/` but reads a `DEPLOY_BASE` env var first, and `src/main.jsx` derives
-its router `basePath` from Vite's `import.meta.env.BASE_URL` — so building with
-`DEPLOY_BASE=/some-other-path/ npm run build` retargets both without editing code. This is what
-lets the same repo be built once for `jitamb.github.io/Learn-ML/` and again for inclusion under
-[study.jitam.in](https://study.jitam.in). Update `index.html`'s OG/Twitter URLs by hand if the
-canonical deployment path changes.
+The canonical live deployment is **[study.jitam.in/machine-learning](https://study.jitam.in/machine-learning)**,
+built and published by the [`study-hub`](https://github.com/JitamB/study-hub) repo's own workflow —
+it checks out this repo and runs `DEPLOY_BASE=/machine-learning/ npm run build`. `vite.config.js`'s
+`base` reads that env var (falling back to `/Learn-ML/` when unset), and `src/main.jsx` derives its
+router `basePath` from Vite's `import.meta.env.BASE_URL`, so one source tree retargets to either
+path with no code changes. To pull in changes made here, re-run (or push to) `study-hub`'s workflow
+— there's no auto-trigger from this repo yet.
+
+This repo's own `.github/workflows/deploy.yml` no longer builds the app — it publishes
+`redirect/index.html` and `redirect/404.html` to `jitamb.github.io/Learn-ML/`, which redirect
+(preserving any sub-path, e.g. `/module/MLFundamentals`) to the `study.jitam.in` URL above. Since
+this workflow no longer runs `npm run build`, a broken build here won't fail CI here — it'll
+surface when `study-hub`'s workflow tries to build this repo instead.
 
 ---
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jitamb.github.io/Learn-ML/sitemap.xml
+Sitemap: https://study.jitam.in/machine-learning/sitemap.xml

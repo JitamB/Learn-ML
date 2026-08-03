@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jitamb.github.io/Learn-ML/</loc>
+    <loc>https://study.jitam.in/machine-learning/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jitamb.github.io/Learn-ML/module/MLFundamentals</loc>
+    <loc>https://study.jitam.in/machine-learning/module/MLFundamentals</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
