@@ -23,3 +23,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./redirect
           force_orphan: true
+
+      - name: Trigger study-hub rebuild
+        env:
+          GH_TOKEN: ${{ secrets.STUDY_HUB_DISPATCH_TOKEN }}
+        run: gh workflow run deploy.yml --repo JitamB/study-hub --ref main
