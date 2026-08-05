@@ -19,7 +19,7 @@
 }
 
 .page-header-title {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   color: var(--color-text-primary);
   line-height: 1.25;
@@ -129,6 +129,26 @@
   font-size: 11px;
   color: var(--color-text-tertiary);
   white-space: nowrap;
+}
+
+/* ── Home CTA button ───────────────────────────────────────── */
+.home-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--border-radius-md);
+  background: var(--color-border-info);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.home-cta-btn:hover {
+  opacity: 0.88;
 }
 
 /* ── Styled table ──────────────────────────────────────────── */
