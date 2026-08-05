@@ -24,6 +24,17 @@ same design system and navigation shell so the two study guides feel like one co
 | # | Module | Category |
 |---|--------|----------|
 | 01 | ML Fundamentals | Foundations |
+| 02 | Exploratory Data Analysis (EDA) | Data Handling & Preprocessing |
+| 03 | Data Cleaning & Feature Engineering | Data Handling & Preprocessing |
+| 04 | Linear Models | Supervised Learning |
+| 05 | KNN & Decision Trees | Supervised Learning |
+| 06 | SVM & Naive Bayes | Supervised Learning |
+| 07 | Bagging & Random Forest | Supervised Learning |
+| 08 | Boosting | Supervised Learning |
+| 09 | Clustering | Unsupervised Learning |
+| 10 | Dimensionality Reduction | Unsupervised Learning |
+| 11 | Association Rules & Anomaly Detection | Unsupervised Learning |
+| 12 | Recommender Systems | Unsupervised Learning |
 
 More rows land here as modules are written — keep this table and `src/data/nav.js` in sync.
 
