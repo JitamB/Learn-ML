@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { CATEGORIES, MODULES } from '../../data/nav.js';
 
 export default function Sidebar({ collapsed, onClose }) {
   const location = useLocation();
 
-  // Derive active category from current route
+  // Derive active category from current route (no match on Home — nothing should highlight there)
   const currentPage = location.pathname.split('/module/')[1];
-  const currentId = (MODULES.find(m => m.page === currentPage) ?? MODULES[0])?.id;
+  const currentId = MODULES.find(m => m.page === currentPage)?.id;
 
   // All categories start expanded
   const [expanded, setExpanded] = useState(
@@ -38,10 +38,10 @@ export default function Sidebar({ collapsed, onClose }) {
       <aside className={`sidebar${collapsed ? ' collapsed' : ''}`} aria-label="Module navigation">
         {/* Brand header */}
         <div className="sidebar-header">
-          <div className="sidebar-brand">
+          <Link to="/" className="sidebar-brand">
             <span className="sidebar-brand-title">Machine Learning Companion</span>
             <span className="sidebar-brand-sub">{MODULES.length} Module{MODULES.length === 1 ? '' : 's'}</span>
-          </div>
+          </Link>
         </div>
 
         {/* Nav tree */}
