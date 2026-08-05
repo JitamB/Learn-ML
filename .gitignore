@@ -4,6 +4,8 @@ dist/
 *.local
 modules/
 curriculum.txt
+*.swp
+
 
 .vscode/
 .DS_Store
