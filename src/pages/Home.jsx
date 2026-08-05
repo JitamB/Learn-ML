@@ -36,9 +36,9 @@ export default function Home() {
     <div className="home-page">
     <div className="home-page-inner">
       <div className="page-header">
-        <div className="page-header-eyebrow">Welcome to</div>
-        <h1 className="page-header-title">Machine Learning Study Guide</h1>
-        <p className="page-header-subtitle">
+        <div className="page-header-eyebrow" style={{display: 'flex', justifyContent: 'center'}}>Welcome to</div>
+        <h1 className="page-header-title" style={{display: 'flex', justifyContent: 'center'}}>Machine Learning Study Guide</h1>
+        <p className="page-header-subtitle" style={{display: 'flex', justifyContent: 'center'}}>
           by Jitam Barman
         </p>
       </div>
