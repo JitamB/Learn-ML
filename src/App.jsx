@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import Sidebar from './components/layout/Sidebar.jsx';
+import Home from './pages/Home.jsx';
 import { MODULES, getModuleByPage, getCategoryForModule } from './data/nav.js';
 import { Helmet } from 'react-helmet-async';
 
@@ -9,6 +10,17 @@ import { lazy, Suspense } from 'react';
 
 const PAGE_MAP = {
   MLFundamentals: lazy(() => import('./pages/MLFundamentals.jsx')),
+  EDA: lazy(() => import('./pages/EDA.jsx')),
+  DataCleaningFeatureEngineering: lazy(() => import('./pages/DataCleaningFeatureEngineering.jsx')),
+  LinearModels: lazy(() => import('./pages/LinearModels.jsx')),
+  KNNDecisionTrees: lazy(() => import('./pages/KNNDecisionTrees.jsx')),
+  SVMNaiveBayes: lazy(() => import('./pages/SVMNaiveBayes.jsx')),
+  BaggingRandomForest: lazy(() => import('./pages/BaggingRandomForest.jsx')),
+  Boosting: lazy(() => import('./pages/Boosting.jsx')),
+  Clustering: lazy(() => import('./pages/Clustering.jsx')),
+  DimensionalityReduction: lazy(() => import('./pages/DimensionalityReduction.jsx')),
+  AssociationRulesAnomalyDetection: lazy(() => import('./pages/AssociationRulesAnomalyDetection.jsx')),
+  RecommenderSystems: lazy(() => import('./pages/RecommenderSystems.jsx')),
 };
 
 /* ── Loading fallback ───────────────────────────────────────── */
@@ -99,9 +111,8 @@ function ContentShell({ onToggleSidebar, theme, onToggleTheme }) {
       <div className="content-scroll">
         <div className="content-page">
           <Routes>
-            <Route path="/" element={<Navigate to={`/module/${MODULES[0]?.page}`} replace />} />
             <Route path="/module/:page" element={<ModulePage />} />
-            <Route path="*" element={<Navigate to={`/module/${MODULES[0]?.page}`} replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
       </div>
@@ -140,6 +151,11 @@ export default function App() {
 
   const toggle = () => setSidebarCollapsed(p => !p);
   const close  = () => setSidebarCollapsed(true);
+
+  // Home is a standalone page — no sidebar, no topbar, just the page itself.
+  if (location.pathname === '/') {
+    return <Home />;
+  }
 
   return (
     <div className="app-shell">
