@@ -35,6 +35,8 @@ same design system and navigation shell so the two study guides feel like one co
 | 10 | Dimensionality Reduction | Unsupervised Learning |
 | 11 | Association Rules & Anomaly Detection | Unsupervised Learning |
 | 12 | Recommender Systems | Unsupervised Learning |
+| 13 | Semi-Supervised Learning | Semi-Supervised & Self-Supervised Learning |
+| 14 | Self-Supervised Learning | Semi-Supervised & Self-Supervised Learning |
 
 More rows land here as modules are written — keep this table and `src/data/nav.js` in sync.
 

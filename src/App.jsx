@@ -21,6 +21,8 @@ const PAGE_MAP = {
   DimensionalityReduction: lazy(() => import('./pages/DimensionalityReduction.jsx')),
   AssociationRulesAnomalyDetection: lazy(() => import('./pages/AssociationRulesAnomalyDetection.jsx')),
   RecommenderSystems: lazy(() => import('./pages/RecommenderSystems.jsx')),
+  SemiSupervisedLearning: lazy(() => import('./pages/SemiSupervisedLearning.jsx')),
+  SelfSupervisedLearning: lazy(() => import('./pages/SelfSupervisedLearning.jsx')),
 };
 
 /* ── Loading fallback ───────────────────────────────────────── */

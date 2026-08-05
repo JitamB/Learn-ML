@@ -22,6 +22,8 @@ export const MODULES = [
   { id: 10, page: 'DimensionalityReduction', title: 'Dimensionality Reduction', subtitle: 'PCA, t-SNE & UMAP', category: 'Unsupervised Learning' },
   { id: 11, page: 'AssociationRulesAnomalyDetection', title: 'Association Rules & Anomaly Detection', subtitle: 'Market-basket mining, Apriori, and flagging what doesn\'t fit', category: 'Unsupervised Learning' },
   { id: 12, page: 'RecommenderSystems', title: 'Recommender Systems', subtitle: 'How "you might also like" actually works', category: 'Unsupervised Learning' },
+  { id: 13, page: 'SemiSupervisedLearning', title: 'Semi-Supervised Learning', subtitle: 'Pseudo-Labeling, Self-Training & Label Propagation', category: 'Semi-Supervised & Self-Supervised Learning' },
+  { id: 14, page: 'SelfSupervisedLearning', title: 'Self-Supervised Learning', subtitle: 'Pretext Tasks, Autoencoders & Contrastive Learning', category: 'Semi-Supervised & Self-Supervised Learning' },
 ];
 
 export const CATEGORIES = [
@@ -29,6 +31,7 @@ export const CATEGORIES = [
   { label: 'Data Handling & Preprocessing', icon: 'ti-database', moduleIds: [2, 3] },
   { label: 'Supervised Learning', icon: 'ti-target', moduleIds: [4, 5, 6, 7, 8] },
   { label: 'Unsupervised Learning', icon: 'ti-affiliate', moduleIds: [9, 10, 11, 12] },
+  { label: 'Semi-Supervised & Self-Supervised Learning', icon: 'ti-tags', moduleIds: [13, 14] },
 ];
 
 /** Lookup a module by its numeric id */
