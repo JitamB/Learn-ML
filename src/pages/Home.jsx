@@ -109,7 +109,7 @@ export default function Home() {
 
       {firstModule && (
         <div style={{ textAlign: 'center', marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid var(--color-border-tertiary)' }}>
-          <Link to={`/module/${firstModule.page}`} className="home-cta-btn">
+          <Link to={`/${firstModule.page}`} className="home-cta-btn">
             Start with {firstModule.title}
             <i className="ti ti-arrow-right" aria-hidden="true" />
           </Link>

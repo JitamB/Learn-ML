@@ -71,7 +71,7 @@ function ModulePage() {
 /* ── Topbar ─────────────────────────────────────────────────── */
 function TopBar({ onToggleSidebar, theme, onToggleTheme }) {
   const location = useLocation();
-  const pagePart = location.pathname.split('/module/')[1];
+  const pagePart = location.pathname.replace(/^\//, '');
   const mod = getModuleByPage(pagePart);
   const category = mod ? getCategoryForModule(mod.id) : '';
 
@@ -97,9 +97,9 @@ function TopBar({ onToggleSidebar, theme, onToggleTheme }) {
             {mod.id} / {MODULES.length}
           </span>
         )}
-        <button onClick={onToggleTheme} style={{ background:'transparent', border:'none', color:'var(--color-text-secondary)', cursor:'pointer', fontSize:20, display:'flex', alignItems:'center' }} aria-label="Toggle theme">
+        {/* <button onClick={onToggleTheme} style={{ background:'transparent', border:'none', color:'var(--color-text-secondary)', cursor:'pointer', fontSize:20, display:'flex', alignItems:'center' }} aria-label="Toggle theme">
           {theme === 'dark' ? <i className="ti ti-sun" /> : <i className="ti ti-moon" />}
-        </button>
+        </button> */}
       </div>
     </header>
   );
@@ -113,7 +113,7 @@ function ContentShell({ onToggleSidebar, theme, onToggleTheme }) {
       <div className="content-scroll">
         <div className="content-page">
           <Routes>
-            <Route path="/module/:page" element={<ModulePage />} />
+            <Route path="/:page" element={<ModulePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

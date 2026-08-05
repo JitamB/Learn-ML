@@ -2,7 +2,7 @@
  *
  * This platform grows one module at a time: add an entry to MODULES (its
  * `page` must match the .jsx filename under src/pages/ exactly — it becomes
- * the URL, e.g. page: 'MLFundamentals' -> /module/MLFundamentals), place it
+ * the URL, e.g. page: 'MLFundamentals' -> /MLFundamentals), place it
  * under an existing (or new) category in CATEGORIES, register a lazy import
  * in App.jsx's PAGE_MAP keyed by that same `page` string, and create the
  * page file under src/pages/. See the README's "Adding a New Module" section

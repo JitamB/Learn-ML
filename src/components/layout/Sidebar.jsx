@@ -6,7 +6,7 @@ export default function Sidebar({ collapsed, onClose }) {
   const location = useLocation();
 
   // Derive active category from current route (no match on Home — nothing should highlight there)
-  const currentPage = location.pathname.split('/module/')[1];
+  const currentPage = location.pathname.replace(/^\//, '');
   const currentId = MODULES.find(m => m.page === currentPage)?.id;
 
   // All categories start expanded
@@ -67,7 +67,7 @@ export default function Sidebar({ collapsed, onClose }) {
                     {mods.map(mod => (
                       <NavLink
                         key={mod.id}
-                        to={`/module/${mod.page}`}
+                        to={`/${mod.page}`}
                         className={({ isActive }) =>
                           `nav-module-item${isActive ? ' active' : ''}`
                         }

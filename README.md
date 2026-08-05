@@ -115,7 +115,7 @@ This is the workflow for turning a new batch of content into a page:
      `moduleId`/`title`/`subtitle`
 2. **Register it in `src/data/nav.js`** — add an entry to `MODULES` whose `page` field matches the
    filename exactly (e.g. `page: 'YourModule'` for `YourModule.jsx` — this is what the URL becomes:
-   `/module/YourModule`), and make sure its `category` exists in `CATEGORIES` (or add a new one).
+   `/YourModule`), and make sure its `category` exists in `CATEGORIES` (or add a new one).
 3. **Register the lazy import** in `src/App.jsx`'s `PAGE_MAP`, keyed by that same `page` string.
 
 That's it — the sidebar, breadcrumb, prev/next buttons, module counts, and theme all update
@@ -162,7 +162,7 @@ path with no code changes. To pull in changes made here, re-run (or push to) `st
 
 This repo's own `.github/workflows/deploy.yml` no longer builds the app — it publishes
 `redirect/index.html` and `redirect/404.html` to `jitamb.github.io/Learn-ML/`, which redirect
-(preserving any sub-path, e.g. `/module/MLFundamentals`) to the `study.jitam.in` URL above. Since
+(preserving any sub-path, e.g. `/MLFundamentals`) to the `study.jitam.in` URL above. Since
 this workflow no longer runs `npm run build`, a broken build here won't fail CI here — it'll
 surface when `study-hub`'s workflow tries to build this repo instead.
 

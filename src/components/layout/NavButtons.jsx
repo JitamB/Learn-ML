@@ -14,7 +14,7 @@ export default function NavButtons({ moduleId }) {
       <button
         className="module-nav-btn"
         disabled={!prev}
-        onClick={() => prev && navigate(`/module/${prev.page}`)}
+        onClick={() => prev && navigate(`/${prev.page}`)}
         title={prev ? prev.title : undefined}
       >
         <i className="ti ti-arrow-left" aria-hidden="true" />
@@ -28,7 +28,7 @@ export default function NavButtons({ moduleId }) {
       <button
         className="module-nav-btn"
         disabled={!next}
-        onClick={() => next && navigate(`/module/${next.page}`)}
+        onClick={() => next && navigate(`/${next.page}`)}
         title={next ? next.title : undefined}
       >
         <span className="module-nav-btn-label">{next ? next.title : ''}</span>
