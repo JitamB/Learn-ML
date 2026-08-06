@@ -23,6 +23,12 @@ const PAGE_MAP = {
   RecommenderSystems: lazy(() => import('./pages/RecommenderSystems.jsx')),
   SemiSupervisedLearning: lazy(() => import('./pages/SemiSupervisedLearning.jsx')),
   SelfSupervisedLearning: lazy(() => import('./pages/SelfSupervisedLearning.jsx')),
+  ValidationBiasVariance: lazy(() => import('./pages/ValidationBiasVariance.jsx')),
+  Metrics: lazy(() => import('./pages/Metrics.jsx')),
+  Regularization: lazy(() => import('./pages/Regularization.jsx')),
+  HyperparameterTuning: lazy(() => import('./pages/HyperparameterTuning.jsx')),
+  TimeSeriesAnalysis: lazy(() => import('./pages/TimeSeriesAnalysis.jsx')),
+  InterpretabilityFairness: lazy(() => import('./pages/InterpretabilityFairness.jsx')),
 };
 
 /* ── Loading fallback ───────────────────────────────────────── */

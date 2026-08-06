@@ -37,6 +37,12 @@ same design system and navigation shell so the two study guides feel like one co
 | 12 | Recommender Systems | Unsupervised Learning |
 | 13 | Semi-Supervised Learning | Semi-Supervised & Self-Supervised Learning |
 | 14 | Self-Supervised Learning | Semi-Supervised & Self-Supervised Learning |
+| 15 | Validation & Bias-Variance | Model Evaluation & Validation |
+| 16 | Metrics | Model Evaluation & Validation |
+| 17 | Regularization | Model Evaluation & Validation |
+| 18 | Hyperparameter Tuning | Model Evaluation & Validation |
+| 19 | Time Series Fundamentals | Time Series Analysis |
+| 20 | Interpretability & Fairness | Model Interpretability |
 
 More rows land here as modules are written — keep this table and `src/data/nav.js` in sync.
 

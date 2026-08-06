@@ -24,6 +24,12 @@ export const MODULES = [
   { id: 12, page: 'RecommenderSystems', title: 'Recommender Systems', subtitle: 'How "you might also like" actually works', category: 'Unsupervised Learning' },
   { id: 13, page: 'SemiSupervisedLearning', title: 'Semi-Supervised Learning', subtitle: 'Pseudo-Labeling, Self-Training & Label Propagation', category: 'Semi-Supervised & Self-Supervised Learning' },
   { id: 14, page: 'SelfSupervisedLearning', title: 'Self-Supervised Learning', subtitle: 'Pretext Tasks, Autoencoders & Contrastive Learning', category: 'Semi-Supervised & Self-Supervised Learning' },
+  { id: 15, page: 'ValidationBiasVariance', title: 'Validation & Bias-Variance', subtitle: 'Train/test/validation splits & cross-validation', category: 'Model Evaluation & Validation' },
+  { id: 16, page: 'Metrics', title: 'Metrics', subtitle: 'Classification, Regression & Unsupervised Metrics', category: 'Model Evaluation & Validation' },
+  { id: 17, page: 'Regularization', title: 'Regularization', subtitle: 'L1, L2 & Elastic Net', category: 'Model Evaluation & Validation' },
+  { id: 18, page: 'HyperparameterTuning', title: 'Hyperparameter Tuning', subtitle: 'Grid Search, Random Search & Bayesian Optimization', category: 'Model Evaluation & Validation' },
+  { id: 19, page: 'TimeSeriesAnalysis', title: 'Time Series Fundamentals', subtitle: 'Trend, seasonality, stationarity, ARIMA/SARIMA & exponential smoothing', category: 'Time Series Analysis' },
+  { id: 20, page: 'InterpretabilityFairness', title: 'Interpretability & Fairness', subtitle: 'SHAP, LIME, Feature Importance & Fairness Auditing', category: 'Model Interpretability' },
 ];
 
 export const CATEGORIES = [
@@ -32,6 +38,9 @@ export const CATEGORIES = [
   { label: 'Supervised Learning', icon: 'ti-target', moduleIds: [4, 5, 6, 7, 8] },
   { label: 'Unsupervised Learning', icon: 'ti-affiliate', moduleIds: [9, 10, 11, 12] },
   { label: 'Semi-Supervised & Self-Supervised Learning', icon: 'ti-tags', moduleIds: [13, 14] },
+  { label: 'Model Evaluation & Validation', icon: 'ti-gauge', moduleIds: [15, 16, 17, 18] },
+  { label: 'Time Series Analysis', icon: 'ti-chart-line', moduleIds: [19] },
+  { label: 'Model Interpretability', icon: 'ti-eye', moduleIds: [20] },
 ];
 
 /** Lookup a module by its numeric id */

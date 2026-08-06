@@ -311,6 +311,11 @@ model.fit(X, y)   # y mixes real labels and -1 for unlabeled rows`}</Code>
         with a high initial threshold, a capped number of rounds, and sometimes an ensemble voting on
         which pseudo-labels to trust.
       </Note>
+      <Note color="info" icon="ti-arrow-right">
+        Once pseudo-labels are added to the training set, evaluating the resulting classifier still
+        just uses ordinary accuracy, precision, recall, and F1 — covered in "Metrics" under Model
+        Evaluation & Validation.
+      </Note>
 
       <H2 c="Interview Q&A" />
       <QA q="Why does pseudo-labeling use a confidence threshold instead of just labeling every unlabeled point?"
